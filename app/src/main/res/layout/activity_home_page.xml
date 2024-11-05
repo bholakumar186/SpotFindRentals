@@ -1,0 +1,92 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:padding="16dp">
+
+    <!-- Button to Open Maps Activity -->
+
+    <!-- TextView to Display Chosen Location -->
+
+    <!-- Search Button -->
+
+    <!-- Bottom Navigation Buttons -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to SpotFind Rentals App!"
+        android:textColor="#132348"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+
+
+
+    <Button
+        android:id="@+id/btnRent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#132348"
+        android:text="Rent Your Parking Space"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageButton
+        android:id="@+id/btnProfile"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_margin="12dp"
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/round_button_background"
+        android:contentDescription="Profile"
+        android:src="@drawable/ic_profile" />
+
+    <ImageButton
+        android:id="@+id/btnOrders"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_margin="12dp"
+        app:layout_constraintStart_toEndOf="@id/btnProfile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/round_button_background"
+        android:contentDescription="Orders"
+        android:src="@drawable/ic_orders" />
+
+    <ImageButton
+        android:id="@+id/btnSupport"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_margin="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAbout"
+        android:background="@drawable/round_button_background"
+        android:contentDescription="Support"
+        android:src="@drawable/ic_support" />
+
+    <ImageButton
+        android:id="@+id/btnAbout"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_margin="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/round_button_background"
+        android:contentDescription="About"
+        android:src="@drawable/ic_about" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

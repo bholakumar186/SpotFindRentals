@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SpotFind Rentals</string>
+    <string name="default_web_client_id">1050861758454-u4sha3sv84socr9ti1d15i6banh75uvc.apps.googleusercontent.com</string>
+    <string name="title_activity_maps">MapsActivity</string>
+</resources>
