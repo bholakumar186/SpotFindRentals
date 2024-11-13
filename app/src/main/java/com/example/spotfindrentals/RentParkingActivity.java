@@ -24,6 +24,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class RentParkingActivity extends AppCompatActivity {
 
@@ -112,7 +113,11 @@ public class RentParkingActivity extends AppCompatActivity {
             Toast.makeText(this, "Please fill in all required fields", Toast.LENGTH_SHORT).show();
             return;
         }
-        ParkingSpaceDatabase parkingSpace = new ParkingSpaceDatabase(ownerName, phoneNumber, alternateNumber, houseNumber,
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("parkingSpaces");
+
+        String parkingId = databaseReference.push().getKey(); // Generate unique ID
+
+        ParkingSpaceDatabase parkingSpace = new ParkingSpaceDatabase(parkingId,ownerName, phoneNumber, alternateNumber, houseNumber,
                 street, locality, city, state, pin, landmark, parkingSize, availabilityTime, cameraAvailability,
                 guardAvailability, location);
 

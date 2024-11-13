@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ParkingSpaceDatabase implements ParkingSpaceDatabasee {
+    private String parkingId;
     private String ownerName;
     private String phoneNumber;
     private String alternateNumber;
@@ -24,10 +25,11 @@ public class ParkingSpaceDatabase implements ParkingSpaceDatabasee {
         // Default constructor required for calls to DataSnapshot.getValue(ParkingSpace.class)
     }
 
-    ParkingSpaceDatabase(String ownerName, String phoneNumber, String alternateNumber, String houseNumber,
+    ParkingSpaceDatabase(String parkingId, String ownerName, String phoneNumber, String alternateNumber, String houseNumber,
                          String street, String locality, String city, String state, String pin,
                          String landmark, String parkingSize, boolean isAvailable, boolean cameraAvailability,
                          boolean guardAvailability, String location) {
+        this.parkingId = parkingId;
         this.ownerName = ownerName;
         this.phoneNumber = phoneNumber;
         this.alternateNumber = alternateNumber;
@@ -46,6 +48,7 @@ public class ParkingSpaceDatabase implements ParkingSpaceDatabasee {
     }
 
     protected ParkingSpaceDatabase(Parcel in) {
+        parkingId = in.readString();
         ownerName = in.readString();
         phoneNumber = in.readString();
         alternateNumber = in.readString();
@@ -65,6 +68,7 @@ public class ParkingSpaceDatabase implements ParkingSpaceDatabasee {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(parkingId);
         dest.writeString(ownerName);
         dest.writeString(phoneNumber);
         dest.writeString(alternateNumber);
@@ -99,6 +103,7 @@ public class ParkingSpaceDatabase implements ParkingSpaceDatabasee {
     };
 
     // Getters and setters
+
     public String getOwnerName() { return ownerName; }
     public void setOwnerName(String ownerName) { this.ownerName = ownerName; }
 
@@ -143,4 +148,6 @@ public class ParkingSpaceDatabase implements ParkingSpaceDatabasee {
 
     public String getLocation() { return location; }
     public void setLocation(String location) { this.location = location; }
+    public String getParkingId() { return parkingId; }
+    public void setParkingId(String parkingId) { this.parkingId = parkingId; }
 }
